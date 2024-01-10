@@ -4,7 +4,7 @@ import 'package:project_lecture_demo_app/theme/color_schemes.g.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
-  dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: ".env");
   Supabase.initialize(
     url: dotenv.env['SUPABASE_URL']!,
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
