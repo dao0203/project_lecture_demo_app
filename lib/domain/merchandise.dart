@@ -12,7 +12,6 @@ class Merchandise with _$Merchandise {
     required int price,
     required String imageUrl,
     required DateTime createdAt,
-    required DateTime updatedAt,
   }) = _Merchandise;
 
   factory Merchandise.fromJson(Map<String, dynamic> json) =>

@@ -14,7 +14,6 @@ _$MerchandiseImpl _$$MerchandiseImplFromJson(Map<String, dynamic> json) =>
       price: json['price'] as int,
       imageUrl: json['imageUrl'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
 Map<String, dynamic> _$$MerchandiseImplToJson(_$MerchandiseImpl instance) =>
@@ -25,5 +24,4 @@ Map<String, dynamic> _$$MerchandiseImplToJson(_$MerchandiseImpl instance) =>
       'price': instance.price,
       'imageUrl': instance.imageUrl,
       'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
     };

@@ -26,7 +26,6 @@ mixin _$Merchandise {
   int get price => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,8 +45,7 @@ abstract class $MerchandiseCopyWith<$Res> {
       String description,
       int price,
       String imageUrl,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime createdAt});
 }
 
 /// @nodoc
@@ -69,7 +67,6 @@ class _$MerchandiseCopyWithImpl<$Res, $Val extends Merchandise>
     Object? price = null,
     Object? imageUrl = null,
     Object? createdAt = null,
-    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -96,10 +93,6 @@ class _$MerchandiseCopyWithImpl<$Res, $Val extends Merchandise>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ) as $Val);
   }
 }
@@ -118,8 +111,7 @@ abstract class _$$MerchandiseImplCopyWith<$Res>
       String description,
       int price,
       String imageUrl,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime createdAt});
 }
 
 /// @nodoc
@@ -139,7 +131,6 @@ class __$$MerchandiseImplCopyWithImpl<$Res>
     Object? price = null,
     Object? imageUrl = null,
     Object? createdAt = null,
-    Object? updatedAt = null,
   }) {
     return _then(_$MerchandiseImpl(
       id: null == id
@@ -166,10 +157,6 @@ class __$$MerchandiseImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ));
   }
 }
@@ -183,8 +170,7 @@ class _$MerchandiseImpl implements _Merchandise {
       required this.description,
       required this.price,
       required this.imageUrl,
-      required this.createdAt,
-      required this.updatedAt});
+      required this.createdAt});
 
   factory _$MerchandiseImpl.fromJson(Map<String, dynamic> json) =>
       _$$MerchandiseImplFromJson(json);
@@ -201,12 +187,10 @@ class _$MerchandiseImpl implements _Merchandise {
   final String imageUrl;
   @override
   final DateTime createdAt;
-  @override
-  final DateTime updatedAt;
 
   @override
   String toString() {
-    return 'Merchandise(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Merchandise(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl, createdAt: $createdAt)';
   }
 
   @override
@@ -222,15 +206,13 @@ class _$MerchandiseImpl implements _Merchandise {
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+                other.createdAt == createdAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description, price,
-      imageUrl, createdAt, updatedAt);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, description, price, imageUrl, createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -253,8 +235,7 @@ abstract class _Merchandise implements Merchandise {
       required final String description,
       required final int price,
       required final String imageUrl,
-      required final DateTime createdAt,
-      required final DateTime updatedAt}) = _$MerchandiseImpl;
+      required final DateTime createdAt}) = _$MerchandiseImpl;
 
   factory _Merchandise.fromJson(Map<String, dynamic> json) =
       _$MerchandiseImpl.fromJson;
@@ -271,8 +252,6 @@ abstract class _Merchandise implements Merchandise {
   String get imageUrl;
   @override
   DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$MerchandiseImplCopyWith<_$MerchandiseImpl> get copyWith =>

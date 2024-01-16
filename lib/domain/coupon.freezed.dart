@@ -23,12 +23,9 @@ mixin _$Coupon {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
   int get discount => throw _privateConstructorUsedError;
-  DateTime get expiresAt => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,12 +41,9 @@ abstract class $CouponCopyWith<$Res> {
       {String id,
       String name,
       String description,
-      String code,
       int discount,
-      DateTime expiresAt,
       bool isActive,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime createdAt});
 }
 
 /// @nodoc
@@ -68,12 +62,9 @@ class _$CouponCopyWithImpl<$Res, $Val extends Coupon>
     Object? id = null,
     Object? name = null,
     Object? description = null,
-    Object? code = null,
     Object? discount = null,
-    Object? expiresAt = null,
     Object? isActive = null,
     Object? createdAt = null,
-    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -88,18 +79,10 @@ class _$CouponCopyWithImpl<$Res, $Val extends Coupon>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
       discount: null == discount
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
               as int,
-      expiresAt: null == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       isActive: null == isActive
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
@@ -107,10 +90,6 @@ class _$CouponCopyWithImpl<$Res, $Val extends Coupon>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ) as $Val);
   }
@@ -127,12 +106,9 @@ abstract class _$$CouponImplCopyWith<$Res> implements $CouponCopyWith<$Res> {
       {String id,
       String name,
       String description,
-      String code,
       int discount,
-      DateTime expiresAt,
       bool isActive,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime createdAt});
 }
 
 /// @nodoc
@@ -149,12 +125,9 @@ class __$$CouponImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? description = null,
-    Object? code = null,
     Object? discount = null,
-    Object? expiresAt = null,
     Object? isActive = null,
     Object? createdAt = null,
-    Object? updatedAt = null,
   }) {
     return _then(_$CouponImpl(
       id: null == id
@@ -169,18 +142,10 @@ class __$$CouponImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
       discount: null == discount
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
               as int,
-      expiresAt: null == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       isActive: null == isActive
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
@@ -188,10 +153,6 @@ class __$$CouponImplCopyWithImpl<$Res>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -204,12 +165,9 @@ class _$CouponImpl implements _Coupon {
       {required this.id,
       required this.name,
       required this.description,
-      required this.code,
       required this.discount,
-      required this.expiresAt,
       required this.isActive,
-      required this.createdAt,
-      required this.updatedAt});
+      required this.createdAt});
 
   factory _$CouponImpl.fromJson(Map<String, dynamic> json) =>
       _$$CouponImplFromJson(json);
@@ -221,21 +179,15 @@ class _$CouponImpl implements _Coupon {
   @override
   final String description;
   @override
-  final String code;
-  @override
   final int discount;
-  @override
-  final DateTime expiresAt;
   @override
   final bool isActive;
   @override
   final DateTime createdAt;
-  @override
-  final DateTime updatedAt;
 
   @override
   String toString() {
-    return 'Coupon(id: $id, name: $name, description: $description, code: $code, discount: $discount, expiresAt: $expiresAt, isActive: $isActive, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Coupon(id: $id, name: $name, description: $description, discount: $discount, isActive: $isActive, createdAt: $createdAt)';
   }
 
   @override
@@ -247,23 +199,18 @@ class _$CouponImpl implements _Coupon {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.code, code) || other.code == code) &&
             (identical(other.discount, discount) ||
                 other.discount == discount) &&
-            (identical(other.expiresAt, expiresAt) ||
-                other.expiresAt == expiresAt) &&
             (identical(other.isActive, isActive) ||
                 other.isActive == isActive) &&
             (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+                other.createdAt == createdAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description, code,
-      discount, expiresAt, isActive, createdAt, updatedAt);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, description, discount, isActive, createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -284,12 +231,9 @@ abstract class _Coupon implements Coupon {
       {required final String id,
       required final String name,
       required final String description,
-      required final String code,
       required final int discount,
-      required final DateTime expiresAt,
       required final bool isActive,
-      required final DateTime createdAt,
-      required final DateTime updatedAt}) = _$CouponImpl;
+      required final DateTime createdAt}) = _$CouponImpl;
 
   factory _Coupon.fromJson(Map<String, dynamic> json) = _$CouponImpl.fromJson;
 
@@ -300,17 +244,11 @@ abstract class _Coupon implements Coupon {
   @override
   String get description;
   @override
-  String get code;
-  @override
   int get discount;
-  @override
-  DateTime get expiresAt;
   @override
   bool get isActive;
   @override
   DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$CouponImplCopyWith<_$CouponImpl> get copyWith =>
