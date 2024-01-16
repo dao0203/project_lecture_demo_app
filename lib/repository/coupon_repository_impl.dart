@@ -6,7 +6,11 @@ class CouponRepositoryImpl implements CouponRepository {
   final client = Supabase.instance.client;
   @override
   Future<List<Coupon>> getCoupons() async {
-    return await client.from('coupons').select().then((value) {
+    return await client
+        .from("coupons")
+        .select()
+        .eq("user_id", client.auth.currentUser!.id)
+        .then((value) {
       return value.map((e) => Coupon.fromJson(e)).toList();
     });
   }
