@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:project_lecture_demo_app/route/router.dart';
 import 'package:project_lecture_demo_app/theme/color_schemes.g.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -11,7 +12,7 @@ void main() async {
     url: dotenv.env['SUPABASE_URL']!,
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
-  runApp(const ProjectLectureDemoTheme());
+  runApp(const ProviderScope(child: ProjectLectureDemoTheme()));
 }
 
 class ProjectLectureDemoTheme extends StatelessWidget {
@@ -28,6 +29,7 @@ class ProjectLectureDemoTheme extends StatelessWidget {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     return MaterialApp.router(
       routerConfig: goRouter,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: lightColorScheme,
