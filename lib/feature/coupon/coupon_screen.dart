@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:project_lecture_demo_app/feature/coupon/coupon_item.dart';
 import 'package:project_lecture_demo_app/state/coupon_list_state.dart';
@@ -18,7 +19,12 @@ class CouponScreen extends HookConsumerWidget {
           itemCount: coupons.length,
           itemBuilder: (context, index) {
             final coupon = coupons[index];
-            return CouponItem(coupon: coupon);
+            return CouponItem(
+              coupon: coupon,
+              onTap: (id) {
+                context.go('/coupon/detail', extra: id);
+              },
+            );
           },
         );
       }, error: (e, s) {

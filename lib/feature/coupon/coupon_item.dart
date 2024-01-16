@@ -6,45 +6,50 @@ import 'package:intl/intl.dart';
 import 'package:project_lecture_demo_app/domain/coupon.dart';
 
 class CouponItem extends HookConsumerWidget {
-  CouponItem({super.key, required this.coupon});
+  CouponItem({super.key, required this.coupon, required this.onTap});
   final Coupon coupon;
+  final Function(String) onTap;
+
   // 1 か 2
   final random = Random().nextInt(2) + 1;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Card(
-      elevation: 5,
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Image.network(
-            //   coupon.imageUrl,
-            //   fit: BoxFit.cover,
-            // ),
-            // 1 か 2で条件分岐
-            Image.asset(
-              'assets/$random.jpeg',
-              fit: BoxFit.cover,
-            ),
+    return GestureDetector(
+      onTap: () => onTap(coupon.id),
+      child: Card(
+        elevation: 5,
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Image.network(
+              //   coupon.imageUrl,
+              //   fit: BoxFit.cover,
+              // ),
+              // 1 か 2で条件分岐
+              Image.asset(
+                'assets/$random.jpeg',
+                fit: BoxFit.cover,
+              ),
 
-            const SizedBox(height: 8),
-            Text(
-              coupon.description,
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              '割引率: ${coupon.discount}%',
-              style: const TextStyle(fontSize: 16, color: Colors.green),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              '作成日: ${DateFormat('yyyy/MM/dd').format(coupon.createdAt)}',
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
-            ),
-          ],
+              const SizedBox(height: 8),
+              Text(
+                coupon.description,
+                style: const TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                '割引率: ${coupon.discount}%',
+                style: const TextStyle(fontSize: 16, color: Colors.green),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                '作成日: ${DateFormat('yyyy/MM/dd').format(coupon.createdAt)}',
+                style: const TextStyle(fontSize: 14, color: Colors.grey),
+              ),
+            ],
+          ),
         ),
       ),
     );
