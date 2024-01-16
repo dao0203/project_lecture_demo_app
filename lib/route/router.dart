@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:project_lecture_demo_app/feature/coupon/coupon_screen.dart';
 import 'package:project_lecture_demo_app/feature/demo/demo_login_screen.dart';
 import 'package:project_lecture_demo_app/splash_gate.dart';
 
@@ -21,7 +22,7 @@ final goRouter = GoRouter(
     GoRoute(
       path: '/coupon',
       pageBuilder: (context, state) => const MaterialPage(
-        child: DemoLoginScreen(),
+        child: CouponScreen(),
       ),
     ),
   ],
