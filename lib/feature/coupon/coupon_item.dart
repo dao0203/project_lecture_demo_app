@@ -1,11 +1,15 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:project_lecture_demo_app/domain/coupon.dart';
 
 class CouponItem extends HookConsumerWidget {
-  const CouponItem({super.key, required this.coupon});
+  CouponItem({super.key, required this.coupon});
   final Coupon coupon;
+  // 1 か 2
+  final random = Random().nextInt(2) + 1;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Card(
@@ -15,10 +19,16 @@ class CouponItem extends HookConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(
-              coupon.imageUrl,
+            // Image.network(
+            //   coupon.imageUrl,
+            //   fit: BoxFit.cover,
+            // ),
+            // 1 か 2で条件分岐
+            Image.asset(
+              'assets/$random.jpeg',
               fit: BoxFit.cover,
             ),
+
             const SizedBox(height: 8),
             Text(
               coupon.description,
