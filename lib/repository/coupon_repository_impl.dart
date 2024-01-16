@@ -14,4 +14,16 @@ class CouponRepositoryImpl implements CouponRepository {
       return value.map((e) => Coupon.fromJson(e)).toList();
     });
   }
+
+  @override
+  Future<Coupon> getCoupon(String id) async {
+    return await client
+        .from("coupons")
+        .select()
+        .eq("user_id", client.auth.currentUser!.id)
+        .eq("id", id)
+        .then((value) {
+      return Coupon.fromJson(value.first);
+    });
+  }
 }
