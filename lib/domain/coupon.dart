@@ -10,6 +10,7 @@ class Coupon with _$Coupon {
   const factory Coupon({
     required String id,
     required String name,
+    required String imageUrl,
     required String description,
     required int discount,
     required bool isActive,
