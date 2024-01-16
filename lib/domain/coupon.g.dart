@@ -9,6 +9,7 @@ part of 'coupon.dart';
 _$CouponImpl _$$CouponImplFromJson(Map<String, dynamic> json) => _$CouponImpl(
       id: json['id'] as String,
       name: json['name'] as String,
+      imageUrl: json['image_url'] as String,
       description: json['description'] as String,
       discount: json['discount'] as int,
       isActive: json['is_active'] as bool,
@@ -19,6 +20,7 @@ Map<String, dynamic> _$$CouponImplToJson(_$CouponImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'image_url': instance.imageUrl,
       'description': instance.description,
       'discount': instance.discount,
       'is_active': instance.isActive,

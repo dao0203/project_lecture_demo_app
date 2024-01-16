@@ -22,6 +22,7 @@ Coupon _$CouponFromJson(Map<String, dynamic> json) {
 mixin _$Coupon {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   int get discount => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
@@ -40,6 +41,7 @@ abstract class $CouponCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      String imageUrl,
       String description,
       int discount,
       bool isActive,
@@ -61,6 +63,7 @@ class _$CouponCopyWithImpl<$Res, $Val extends Coupon>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? imageUrl = null,
     Object? description = null,
     Object? discount = null,
     Object? isActive = null,
@@ -74,6 +77,10 @@ class _$CouponCopyWithImpl<$Res, $Val extends Coupon>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -105,6 +112,7 @@ abstract class _$$CouponImplCopyWith<$Res> implements $CouponCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      String imageUrl,
       String description,
       int discount,
       bool isActive,
@@ -124,6 +132,7 @@ class __$$CouponImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? imageUrl = null,
     Object? description = null,
     Object? discount = null,
     Object? isActive = null,
@@ -137,6 +146,10 @@ class __$$CouponImplCopyWithImpl<$Res>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -165,6 +178,7 @@ class _$CouponImpl implements _Coupon {
   const _$CouponImpl(
       {required this.id,
       required this.name,
+      required this.imageUrl,
       required this.description,
       required this.discount,
       required this.isActive,
@@ -178,6 +192,8 @@ class _$CouponImpl implements _Coupon {
   @override
   final String name;
   @override
+  final String imageUrl;
+  @override
   final String description;
   @override
   final int discount;
@@ -188,7 +204,7 @@ class _$CouponImpl implements _Coupon {
 
   @override
   String toString() {
-    return 'Coupon(id: $id, name: $name, description: $description, discount: $discount, isActive: $isActive, createdAt: $createdAt)';
+    return 'Coupon(id: $id, name: $name, imageUrl: $imageUrl, description: $description, discount: $discount, isActive: $isActive, createdAt: $createdAt)';
   }
 
   @override
@@ -198,6 +214,8 @@ class _$CouponImpl implements _Coupon {
             other is _$CouponImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.discount, discount) ||
@@ -210,8 +228,8 @@ class _$CouponImpl implements _Coupon {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, description, discount, isActive, createdAt);
+  int get hashCode => Object.hash(runtimeType, id, name, imageUrl, description,
+      discount, isActive, createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -231,6 +249,7 @@ abstract class _Coupon implements Coupon {
   const factory _Coupon(
       {required final String id,
       required final String name,
+      required final String imageUrl,
       required final String description,
       required final int discount,
       required final bool isActive,
@@ -242,6 +261,8 @@ abstract class _Coupon implements Coupon {
   String get id;
   @override
   String get name;
+  @override
+  String get imageUrl;
   @override
   String get description;
   @override
