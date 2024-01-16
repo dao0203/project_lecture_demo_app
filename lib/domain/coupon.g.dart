@@ -11,8 +11,8 @@ _$CouponImpl _$$CouponImplFromJson(Map<String, dynamic> json) => _$CouponImpl(
       name: json['name'] as String,
       description: json['description'] as String,
       discount: json['discount'] as int,
-      isActive: json['isActive'] as bool,
-      createdAt: DateTime.parse(json['createdAt'] as String),
+      isActive: json['is_active'] as bool,
+      createdAt: DateTime.parse(json['created_at'] as String),
     );
 
 Map<String, dynamic> _$$CouponImplToJson(_$CouponImpl instance) =>
@@ -21,6 +21,6 @@ Map<String, dynamic> _$$CouponImplToJson(_$CouponImpl instance) =>
       'name': instance.name,
       'description': instance.description,
       'discount': instance.discount,
-      'isActive': instance.isActive,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'is_active': instance.isActive,
+      'created_at': instance.createdAt.toIso8601String(),
     };

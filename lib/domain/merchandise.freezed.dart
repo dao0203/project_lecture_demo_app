@@ -162,7 +162,8 @@ class __$$MerchandiseImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$MerchandiseImpl implements _Merchandise {
   const _$MerchandiseImpl(
       {required this.id,

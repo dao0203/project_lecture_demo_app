@@ -159,7 +159,8 @@ class __$$CouponImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$CouponImpl implements _Coupon {
   const _$CouponImpl(
       {required this.id,

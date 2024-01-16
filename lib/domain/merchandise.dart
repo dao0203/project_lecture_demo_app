@@ -5,6 +5,8 @@ part 'merchandise.g.dart';
 
 @freezed
 class Merchandise with _$Merchandise {
+  // ignore: invalid_annotation_target
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Merchandise({
     required String id,
     required String name,
