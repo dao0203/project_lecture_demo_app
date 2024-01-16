@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:project_lecture_demo_app/feature/coupon/coupon_item.dart';
+import 'package:project_lecture_demo_app/state/coupon_list_state.dart';
 
 class CouponScreen extends HookConsumerWidget {
   const CouponScreen({super.key});
@@ -7,11 +9,27 @@ class CouponScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('クーポン一覧'),
+        scrolledUnderElevation: 0,
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        title: const Text('クーポン'),
       ),
-      body: const Center(
-        child: Text('クーポン一覧'),
-      ),
+      body: ref.watch(couponListStateProvider).when(data: (coupons) {
+        return ListView.builder(
+          itemCount: coupons.length,
+          itemBuilder: (context, index) {
+            final coupon = coupons[index];
+            return CouponItem(coupon: coupon);
+          },
+        );
+      }, error: (e, s) {
+        return const Center(
+          child: Text('エラーが発生しました'),
+        );
+      }, loading: () {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      }),
     );
   }
 }
