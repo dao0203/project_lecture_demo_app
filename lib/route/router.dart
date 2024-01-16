@@ -21,18 +21,20 @@ final goRouter = GoRouter(
       ),
     ),
     GoRoute(
-      path: '/coupon',
-      pageBuilder: (context, state) => const MaterialPage(
-        child: CouponScreen(),
-      ),
-    ),
-    GoRoute(
-        path: '/coupon/detail',
-        pageBuilder: (context, state) {
-          final id = state.extra as String;
-          return MaterialPage(
-            child: CouponDetailScreen(id: id),
-          );
-        }),
+        path: '/coupon',
+        pageBuilder: (context, state) => const MaterialPage(
+              child: CouponScreen(),
+            ),
+        routes: [
+          GoRoute(
+            path: 'detail',
+            pageBuilder: (context, state) {
+              final id = state.extra as String;
+              return MaterialPage(
+                child: CouponDetailScreen(id: id),
+              );
+            },
+          ),
+        ]),
   ],
 );
