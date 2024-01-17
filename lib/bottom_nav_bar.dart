@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:project_lecture_demo_app/feature/candidate/candidate_history_screen.dart';
+import 'package:project_lecture_demo_app/feature/merchandise/merchandise_history_screen.dart';
 import 'package:project_lecture_demo_app/feature/coupon/coupon_screen.dart';
 
 final bottomNavigationBarIndexProvider = StateProvider<int>((ref) => 0);
@@ -10,7 +10,7 @@ final pageWidgetProvider = Provider<Widget>((ref) {
     case 0:
       return const CouponScreen();
     case 1:
-      return const CandidateHistoryScreen();
+      return const MerchandiseHistoryScreen();
     default:
       return const CouponScreen();
   }

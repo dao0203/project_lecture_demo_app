@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:project_lecture_demo_app/bottom_nav_bar.dart';
-import 'package:project_lecture_demo_app/feature/candidate/candidate_history_screen.dart';
+import 'package:project_lecture_demo_app/feature/merchandise/merchandise_history_screen.dart';
 import 'package:project_lecture_demo_app/feature/coupon/coupon_detail_screen.dart';
 import 'package:project_lecture_demo_app/feature/coupon/coupon_screen.dart';
 import 'package:project_lecture_demo_app/feature/demo/demo_login_screen.dart';
@@ -49,7 +49,7 @@ final goRouter = GoRouter(
       path: '/candidate_history',
       pageBuilder: (context, state) {
         return const MaterialPage(
-          child: CandidateHistoryScreen(),
+          child: MerchandiseHistoryScreen(),
         );
       },
     )
