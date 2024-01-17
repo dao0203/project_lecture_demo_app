@@ -12,7 +12,7 @@ class Merchandise with _$Merchandise {
     required String name,
     required String description,
     required int price,
-    required String imageUrl,
+    required String? imageUrl,
     required DateTime createdAt,
   }) = _Merchandise;
 

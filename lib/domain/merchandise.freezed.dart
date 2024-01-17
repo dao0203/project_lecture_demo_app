@@ -24,7 +24,7 @@ mixin _$Merchandise {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $MerchandiseCopyWith<$Res> {
       String name,
       String description,
       int price,
-      String imageUrl,
+      String? imageUrl,
       DateTime createdAt});
 }
 
@@ -65,7 +65,7 @@ class _$MerchandiseCopyWithImpl<$Res, $Val extends Merchandise>
     Object? name = null,
     Object? description = null,
     Object? price = null,
-    Object? imageUrl = null,
+    Object? imageUrl = freezed,
     Object? createdAt = null,
   }) {
     return _then(_value.copyWith(
@@ -85,10 +85,10 @@ class _$MerchandiseCopyWithImpl<$Res, $Val extends Merchandise>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -110,7 +110,7 @@ abstract class _$$MerchandiseImplCopyWith<$Res>
       String name,
       String description,
       int price,
-      String imageUrl,
+      String? imageUrl,
       DateTime createdAt});
 }
 
@@ -129,7 +129,7 @@ class __$$MerchandiseImplCopyWithImpl<$Res>
     Object? name = null,
     Object? description = null,
     Object? price = null,
-    Object? imageUrl = null,
+    Object? imageUrl = freezed,
     Object? createdAt = null,
   }) {
     return _then(_$MerchandiseImpl(
@@ -149,10 +149,10 @@ class __$$MerchandiseImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -185,7 +185,7 @@ class _$MerchandiseImpl implements _Merchandise {
   @override
   final int price;
   @override
-  final String imageUrl;
+  final String? imageUrl;
   @override
   final DateTime createdAt;
 
@@ -235,7 +235,7 @@ abstract class _Merchandise implements Merchandise {
       required final String name,
       required final String description,
       required final int price,
-      required final String imageUrl,
+      required final String? imageUrl,
       required final DateTime createdAt}) = _$MerchandiseImpl;
 
   factory _Merchandise.fromJson(Map<String, dynamic> json) =
@@ -250,7 +250,7 @@ abstract class _Merchandise implements Merchandise {
   @override
   int get price;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
   DateTime get createdAt;
   @override
