@@ -8,6 +8,6 @@ final couponRepositoryProvider = Provider<CouponRepository>((ref) {
   return CouponRepositoryImpl();
 });
 
-final maerchandiseRepositoryProvider = Provider<MerchandiseRepository>((ref) {
+final merchandiseRepositoryProvider = Provider<MerchandiseRepository>((ref) {
   return MerchandiseRepositoryImpl();
 });
