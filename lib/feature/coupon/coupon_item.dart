@@ -23,16 +23,11 @@ class CouponItem extends HookConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Image.network(
-              //   coupon.imageUrl,
-              //   fit: BoxFit.cover,
-              // ),
-              // 1 か 2で条件分岐
               Image.asset(
-                'assets/$random.jpeg',
+                coupon.imageUrl,
                 fit: BoxFit.cover,
+                width: double.infinity,
               ),
-
               const SizedBox(height: 8),
               Text(
                 coupon.description,

@@ -33,11 +33,6 @@ class CouponDetailScreen extends HookConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                // Image.network(
-                //   coupon.imageUrl,
-                //   fit: BoxFit.cover,
-                // ),
-                // 仮の画像を表示
                 Image.asset(
                   'assets/1.jpeg',
                   fit: BoxFit.cover,

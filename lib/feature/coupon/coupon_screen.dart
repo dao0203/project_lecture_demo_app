@@ -19,8 +19,11 @@ class CouponScreen extends HookConsumerWidget {
           itemCount: coupons.length,
           itemBuilder: (context, index) {
             final coupon = coupons[index];
+            final changedCoupon = coupon.copyWith(
+              imageUrl: 'assets/${index + 1}.jpeg',
+            );
             return CouponItem(
-              coupon: coupon,
+              coupon: changedCoupon,
               onTap: (id) {
                 context.push('/coupon/detail', extra: id);
               },
