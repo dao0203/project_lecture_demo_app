@@ -22,7 +22,7 @@ class CouponScreen extends HookConsumerWidget {
             return CouponItem(
               coupon: coupon,
               onTap: (id) {
-                context.go('/coupon/detail', extra: id);
+                context.push('/coupon/detail', extra: id);
               },
             );
           },

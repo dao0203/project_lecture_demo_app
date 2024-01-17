@@ -19,7 +19,7 @@ class DemoLoginScreen extends HookConsumerWidget {
                   email: env['SUPABASE_TEST_EMAIL']!,
                   password: env['SUPABASE_TEST_PASSWORD']!,
                 )
-                .then((value) => context.go('/coupon'));
+                .then((value) => context.go('/bottom_nav_bar'));
           },
           child: const Text('Login'),
         ),

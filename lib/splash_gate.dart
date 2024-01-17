@@ -26,7 +26,7 @@ class _SplashGateState extends ConsumerState<SplashGate> {
     final current = Supabase.instance.client.auth.currentUser;
     debugPrint('current: $current');
     if (current != null) {
-      context.go('/coupon');
+      context.go('/bottom_nav_bar');
     } else {
       context.go('/login');
     }
